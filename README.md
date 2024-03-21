@@ -59,6 +59,12 @@ Hannah said she wants them to take up the full width of her phone screen, so let
 
 If you resize your browser window, you’ll see that the image automatically resizes to fit the full width of the screen. After a certain width, however, our images won’t look so great. Take Hannah’s giant desktop monitor — they might look terrible! 
 
+<iframe height="300" style="width: 100%;" scrolling="no" title="Width as a Percentage" src="https://codepen.io/GAmarketing/embed/vYMyVzR?default-tab=css%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/GAmarketing/pen/vYMyVzR">
+  Width as a Percentage</a> by General Assembly (<a href="https://codepen.io/GAmarketing">@GAmarketing</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
 If only there were a way to cap the width...
 
 ---
@@ -76,6 +82,12 @@ Let’s try it out! Add in the `max-width` property, like so:
   max-width: 500px;
 }
 ```
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="The MaxWidth Property" src="https://codepen.io/GAmarketing/embed/mdgOzGK?default-tab=css%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/GAmarketing/pen/mdgOzGK">
+  The MaxWidth Property</a> by General Assembly (<a href="https://codepen.io/GAmarketing">@GAmarketing</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 Now our images fill our screens on smaller devices but won’t get any wider than 500px on larger ones. Move your browser window around to see how this plays out.
 
@@ -99,6 +111,12 @@ header {
   position: relative;
 }
 ```
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="Sizing Other Elements" src="https://codepen.io/GAmarketing/embed/OJGbBoa?default-tab=css%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/GAmarketing/pen/OJGbBoa">
+  Sizing Other Elements</a> by General Assembly (<a href="https://codepen.io/GAmarketing">@GAmarketing</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 ---
 
@@ -181,6 +199,12 @@ Here’s where things can get tricky. We want to add top and bottom margins to s
 
 **Hint**: Remember the **TR**ou**BL**e acronym for targeting `margin` more specifically!
 
+<iframe height="300" style="width: 100%;" scrolling="no" title="Some Finishing Touches" src="https://codepen.io/GAmarketing/embed/QWPGZVX?default-tab=css%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/GAmarketing/pen/QWPGZVX">
+  Some Finishing Touches</a> by General Assembly (<a href="https://codepen.io/GAmarketing">@GAmarketing</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
 ---
 
 <h1 class="slide-header">Further Refinement: Media Queries</h1>
@@ -248,6 +272,12 @@ When a screen is 600px wide, our images will be 30% of that, or about 200px wide
 Once you’ve added this in the code editor, resize your browser window. See how the images pop to full width once the browser shrinks below 600px wide? Beautiful.
 
 **Pro tip**: Make sure your media query is called _after_ the main rule for your element. You need to keep your most specific rules at the bottom of your styles so that they don’t override any earlier ones.
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="Media Queries for Our Landing Page" src="https://codepen.io/GAmarketing/embed/MWRbPPw?default-tab=css%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/GAmarketing/pen/MWRbPPw">
+  Media Queries for Our Landing Page</a> by General Assembly (<a href="https://codepen.io/GAmarketing">@GAmarketing</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 ---
 
