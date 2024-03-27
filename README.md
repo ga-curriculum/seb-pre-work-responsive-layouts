@@ -296,5 +296,5 @@ Still curious about responsive design? Check out these sites:
 * <a href="https://www.creativebloq.com/rwd/responsive-web-design-tutorials-71410085" target="_blank" rel="noreferrer noopener">Additional responsive design tutorials</a>.
 * An overview of <a href="http://cssmediaqueries.com/overview.html" target="_blank" rel="noreferrer noopener">how to write media queries</a> for the most common screen sizes.
 * Tips for <a href="https://www.bitdegree.org/learn/css-max-width" target="_blank" rel="noreferrer noopener">using the `max-width` property</a>.
-
+ 
 </textarea>
