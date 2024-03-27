@@ -59,7 +59,7 @@ Hannah said she wants them to take up the full width of her phone screen, so let
 
 If you resize your browser window, you’ll see that the image automatically resizes to fit the full width of the screen. After a certain width, however, our images won’t look so great. Take Hannah’s giant desktop monitor — they might look terrible! 
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="Width as a Percentage" src="https://codepen.io/GAmarketing/embed/vYMyVzR?default-tab=css%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe sandbox="allow-scripts allow-top-navigation allow-top-navigation-by-user-activation allow-forms allow-popups allow-same-origin"  height="400" style="width: 100%;" scrolling="no" title="Width as a Percentage" src="https://codepen.io/GAmarketing/embed/vYMyVzR?default-tab=css%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/GAmarketing/pen/vYMyVzR">
   Width as a Percentage</a> by General Assembly (<a href="https://codepen.io/GAmarketing">@GAmarketing</a>)
   on <a href="https://codepen.io">CodePen</a>.
@@ -83,7 +83,7 @@ Let’s try it out! Add in the `max-width` property, like so:
 }
 ```
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="The MaxWidth Property" src="https://codepen.io/GAmarketing/embed/mdgOzGK?default-tab=css%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe sandbox="allow-scripts allow-top-navigation allow-top-navigation-by-user-activation allow-forms allow-popups allow-same-origin"  height="400" style="width: 100%;" scrolling="no" title="The MaxWidth Property" src="https://codepen.io/GAmarketing/embed/mdgOzGK?default-tab=css%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/GAmarketing/pen/mdgOzGK">
   The MaxWidth Property</a> by General Assembly (<a href="https://codepen.io/GAmarketing">@GAmarketing</a>)
   on <a href="https://codepen.io">CodePen</a>.
@@ -112,7 +112,7 @@ header {
 }
 ```
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="Sizing Other Elements" src="https://codepen.io/GAmarketing/embed/OJGbBoa?default-tab=css%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe sandbox="allow-scripts allow-top-navigation allow-top-navigation-by-user-activation allow-forms allow-popups allow-same-origin"  height="400" style="width: 100%;" scrolling="no" title="Sizing Other Elements" src="https://codepen.io/GAmarketing/embed/OJGbBoa?default-tab=css%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/GAmarketing/pen/OJGbBoa">
   Sizing Other Elements</a> by General Assembly (<a href="https://codepen.io/GAmarketing">@GAmarketing</a>)
   on <a href="https://codepen.io">CodePen</a>.
@@ -128,21 +128,19 @@ Think it through — what’s the **most efficient way** of doing this?
 
 <details>
   <summary>Reveal Answer</summary>
-  All of these items have one thing in common: They exist in the `<body>` of the page. By targeting the `<body>`, the formatting rules would apply to all the elements mentioned above.
+  All of these items have one thing in common: They exist in the body of the page. By targeting the body, the formatting rules would apply to all the elements mentioned above.
 
-    Let’s add a few more properties to the `<body>` rule at the top of our style sheet. 
+    Let’s add a few more properties to the body rule at the top of our style sheet. 
     
-    We can start with the `<header>` rule you just created and add these `width`, `max-width`, and `position` properties to the `<body>`:
+    We can start with the header rule you just created and add these width, max-width, and position properties to the body:
     
-    ```css
     body {
       width: 100%;
       max-width: 900px;
       position: relative;
     }
-    ```
     
-    **Note**: Remember the “cascading” part of CSS? Because this rule uses an element selector, it will be overridden by more specific rules that follow. So this **won’t** affect the `position: absolute` property of the social icons, as that rule has more specificity than the generic `body` rule.
+    Note: Remember the “cascading” part of CSS? Because this rule uses an element selector, it will be overridden by more specific rules that follow. So this won’t affect the position: absolute property of the social icons, as that rule has more specificity than the generic body rule.
 </details>
 
 ---
@@ -199,7 +197,7 @@ Here’s where things can get tricky. We want to add top and bottom margins to s
 
 **Hint**: Remember the **TR**ou**BL**e acronym for targeting `margin` more specifically!
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="Some Finishing Touches" src="https://codepen.io/GAmarketing/embed/QWPGZVX?default-tab=css%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe sandbox="allow-scripts allow-top-navigation allow-top-navigation-by-user-activation allow-forms allow-popups allow-same-origin"  height="400" style="width: 100%;" scrolling="no" title="Some Finishing Touches" src="https://codepen.io/GAmarketing/embed/QWPGZVX?default-tab=css%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/GAmarketing/pen/QWPGZVX">
   Some Finishing Touches</a> by General Assembly (<a href="https://codepen.io/GAmarketing">@GAmarketing</a>)
   on <a href="https://codepen.io">CodePen</a>.
@@ -273,7 +271,7 @@ Once you’ve added this in the code editor, resize your browser window. See how
 
 **Pro tip**: Make sure your media query is called _after_ the main rule for your element. You need to keep your most specific rules at the bottom of your styles so that they don’t override any earlier ones.
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="Media Queries for Our Landing Page" src="https://codepen.io/GAmarketing/embed/MWRbPPw?default-tab=css%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe sandbox="allow-scripts allow-top-navigation allow-top-navigation-by-user-activation allow-forms allow-popups allow-same-origin"  height="400" style="width: 100%;" scrolling="no" title="Media Queries for Our Landing Page" src="https://codepen.io/GAmarketing/embed/MWRbPPw?default-tab=css%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/GAmarketing/pen/MWRbPPw">
   Media Queries for Our Landing Page</a> by General Assembly (<a href="https://codepen.io/GAmarketing">@GAmarketing</a>)
   on <a href="https://codepen.io">CodePen</a>.
@@ -291,7 +289,6 @@ When creating responsive designs, remember:
 If you’re eager for more responsive design knowledge, check out the <a href="https://learn.shayhowe.com/advanced-html-css/responsive-web-design/" target="_blank" rel="noreferrer noopener">Responsive Design Primer</a>.
 
 ---
-
 
 <h1 class="slide-header">Conclusion</h1>
 
