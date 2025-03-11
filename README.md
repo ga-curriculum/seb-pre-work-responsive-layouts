@@ -136,10 +136,10 @@ Which `margin` values could we use to **horizontally center** our content on the
 
 <fieldset>
   <legend>Please select all that apply</legend>
-  <input type="checkbox" id="uniqueAnswer" name="unique"/><label for="uniqueAnswer">margin: 0</label><br />
-  <input type="checkbox" id="uniqueAnswer4" name="unique4" correct="true"/><label for="uniqueAnswer4">margin: auto</label><br />
-  <input type="checkbox" id="uniqueAnswer2" name="unique2" correct="true"/><label for="uniqueAnswer2">margin: 0 auto</label><br />
-  <input type="checkbox" id="uniqueAnswer3" name="unique3"/><label for="uniqueAnswer3">margin: 50 50</label><br />
+  <input type="checkbox" id="uniqueAnswer" name="unique"/><label for="uniqueAnswer">margin: 0;</label><br />
+  <input type="checkbox" id="uniqueAnswer4" name="unique4" correct="true"/><label for="uniqueAnswer4">margin: auto;</label><br />
+  <input type="checkbox" id="uniqueAnswer2" name="unique2" correct="true"/><label for="uniqueAnswer2">margin: 0 auto;</label><br />
+  <input type="checkbox" id="uniqueAnswer3" name="unique3"/><label for="uniqueAnswer3">margin: 50 50;</label><br />
 </fieldset>
 
 <button class="ant-btn ant-btn-primary multiple-choice-checkbox-submit">Submit Answer</button>
@@ -169,7 +169,7 @@ In the next slides, we’ll learn how to apply **Flexbox properties** to make th
 
 To use Flexbox, we apply `display: flex;` to a **parent container**, which allows us to control how its child elements are positioned.
 
-<img src="./assets/flexbox-layouts.png" alt="Flexbox Container" style="width:500px;"/>
+<img src="./assets/flexbox-layouts.png" alt="Flexbox Container" style="width:600px;"/>
 
 **1. Make an Element a Flex Container**
 
@@ -362,16 +362,16 @@ Look at the following media query. What happens when the screen width is **600px
   <legend>Select one option:</legend>
 
   <input type="radio" name="action" id="option1" value="option1" />
-  <label for="option1">The <code>&lt;body&gt;</code> background will always be light gray, and the <code>&lt;h1&gt;</code> will always have a font size of 24px, no matter the screen size.</label><br /><br />
+  <label for="option1">The &lt;body&gt; background will always be light gray, and the &lt;h1&gt; will always have a font size of 24px, no matter the screen size.</label><br /><br />
 
   <input type="radio" name="action" id="option2" value="option2" correct="true"/>
-  <label for="option2">When the screen is <code>600px</code> or smaller, the <code>&lt;body&gt;</code> background will change to light gray, and the <code>&lt;h1&gt;</code> font size will become 24px.</label><br /><br />
+  <label for="option2">When the screen is 600px or smaller, the &lt;body&gt; background will change to light gray, and the &lt;h1&gt; font size will become 24px.</label><br /><br />
 
   <input type="radio" name="action" id="option3" value="option3" />
-  <label for="option3">When the screen is <code>exactly 600px</code>, the <code>&lt;body&gt;</code> background will turn light gray, and the <code>&lt;h1&gt;</code> font size will become 24px.</label><br /><br />
+  <label for="option3">When the screen is exactly 600px, the &lt;body&gt; background will turn light gray, and the &lt;h1&gt; font size will become 24px.</label><br /><br />
 
   <input type="radio" name="action" id="option4" value="option4" />
-  <label for="option4">When the screen is <code>larger than 600px</code>, the <code>&lt;body&gt;</code> background will turn light gray, and the <code>&lt;h1&gt;</code> font size will become 24px.</label><br /><br />
+  <label for="option4">When the screen is larger than 600px, the &lt;body&gt; background will turn light gray, and the &lt;h1&gt; font size will become 24px.</label><br /><br />
 
 </fieldset>
 
