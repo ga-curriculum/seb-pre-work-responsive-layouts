@@ -358,7 +358,7 @@ Look at the following media query. What happens when the screen width is **600px
 }
 ```
 
-<fieldset style="border: 2px solid #ccc; padding: 10px; border-radius: 8px;">
+<fieldset>
   <legend>Select one option:</legend>
 
   <input type="radio" name="action" id="option1" value="option1" />
