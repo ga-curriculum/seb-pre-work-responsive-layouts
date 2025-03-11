@@ -362,16 +362,16 @@ Look at the following media query. What happens when the screen width is **600px
   <legend>Select one option:</legend>
 
   <input type="radio" name="action" id="option1" value="option1" />
-  <label for="option1">The &lt;body&gt; background will always be light gray, and the &lt;h1&gt; will always have a font size of 24px, no matter the screen size.</label><br /><br />
+  <label for="option1">The body background will always be light gray, and the h1 will always have a font size of 24px, no matter the screen size.</label><br /><br />
 
   <input type="radio" name="action" id="option2" value="option2" correct="true"/>
-  <label for="option2">When the screen is 600px or smaller, the &lt;body&gt; background will change to light gray, and the &lt;h1&gt; font size will become 24px.</label><br /><br />
+  <label for="option2">When the screen is 600px or smaller, the body background will change to light gray, and the h1 font size will become 24px.</label><br /><br />
 
   <input type="radio" name="action" id="option3" value="option3" />
-  <label for="option3">When the screen is exactly 600px, the &lt;body&gt; background will turn light gray, and the &lt;h1&gt; font size will become 24px.</label><br /><br />
+  <label for="option3">When the screen is exactly 600px, the body background will turn light gray, and the h1 font size will become 24px.</label><br /><br />
 
   <input type="radio" name="action" id="option4" value="option4" />
-  <label for="option4">When the screen is larger than 600px, the &lt;body&gt; background will turn light gray, and the &lt;h1&gt; font size will become 24px.</label><br /><br />
+  <label for="option4">When the screen is larger than 600px, the body background will turn light gray, and the h1 font size will become 24px.</label><br /><br />
 
 </fieldset>
 
