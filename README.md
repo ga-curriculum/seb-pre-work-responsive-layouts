@@ -10,7 +10,11 @@ In our multimedia world, a website can be viewed on everything from an 8,000px m
 
 <h5 id="topics-header" class="color-grey-500">Topics</h5>
 
-Width and Max-Width
+Margin and Max-Width
+
+<hr>
+
+Flexbox
 
 <hr>
 
@@ -27,9 +31,9 @@ Media Queries
 <p>By the end of this lesson, you'll be able to:</p>
 
 <ul>
-  <li>Use Flexbox to apply flexible alignment and spacing to layouts.</li>
-  <li>Use media queries to restructure your page for different screens.</li>
-  <li>Adjust the styles of HTML elements when rendered on different screens.</li>
+  <li>Ensure content remains readable and well-structured on both desktop and mobile devices.</li>
+  <li>Use Flexbox to center content, create flexible layouts, and add spacing between elements.</li>
+  <li>Apply media queries to adjust navigation, images, and text for different screen sizes.</li>
 </ul>
 
 ---
@@ -40,13 +44,17 @@ Media Queries
 
 Now that we’re starting to think about **responsive design**, let’s talk about how an element’s width behaves on different screen sizes.
 
-Right now, our images have **no width set**, so they appear at their **natural size of 300px wide**. This means:
+Right now, our images have **no width set**, so they appear at their **natural size of `300px` wide**. This means:
 
-- On a **small phone screen**, 300px might take up most of the space.
-- On a **large desktop monitor**, 300px might look tiny.
+- On a **small phone screen**, `300px` might take up most of the space.
+- On a **large desktop monitor**, `300px` might look tiny.
 - If we set a fixed width (like `width: 300px;`), the images **stay that exact size** no matter what screen they’re viewed on.
 
 But what if we want the images to **resize dynamically** based on the screen size?
+
+---
+
+<h1 class="slide-header">Testing Responsive Width</h1>
 
 Instead of setting a fixed pixel width, we can set the width as a **percentage** of its container. This means the image will _scale_ with the screen size.
 
@@ -81,8 +89,6 @@ This is the challenge of responsive design—we want our images to **look good a
 Right now, our images are **300px wide**, which actually works well across different screen sizes, so we don’t need to change them! However, there’s another element that could use some improvement—our **intro paragraph**.
 
 Currently, the paragraph stretches **all the way across the screen**, making it a little strange to read, especially on larger screens. Instead of letting it span the entire width, we can use the `max-width` property to **cap its width**, keeping it more visually balanced.
-
-Let’s try it out!
 
 **1. Add the following to `#introduction` to limit the width of the intro paragraph while keeping it centered:**
 
@@ -138,8 +144,8 @@ Which `margin` values could we use to **horizontally center** our content on the
   <legend>Please select all that apply</legend>
   <input type="checkbox" id="uniqueAnswer" name="unique"/><label for="uniqueAnswer">margin: 0;</label><br />
   <input type="checkbox" id="uniqueAnswer4" name="unique4" correct="true"/><label for="uniqueAnswer4">margin: auto;</label><br />
-  <input type="checkbox" id="uniqueAnswer2" name="unique2" correct="true"/><label for="uniqueAnswer2">margin: 0 auto;</label><br />
   <input type="checkbox" id="uniqueAnswer3" name="unique3"/><label for="uniqueAnswer3">margin: 50 50;</label><br />
+  <input type="checkbox" id="uniqueAnswer2" name="unique2" correct="true"/><label for="uniqueAnswer2">margin: 0 auto;</label><br />
 </fieldset>
 
 <button class="ant-btn ant-btn-primary multiple-choice-checkbox-submit">Submit Answer</button>
@@ -357,6 +363,7 @@ Look at the following media query. What happens when the screen width is **600px
   }
 }
 ```
+
 Select one option:
 
 <fieldset>
@@ -420,8 +427,8 @@ This media query:
 Now, **resize the browser** or view the site on a **mobile screen** to see the navigation adjust automatically! 🎉
 
 <!-- responsive-layouts-with-css-hannahs-site-15 -->
-<iframe sandbox="allow-scripts allow-top-navigation allow-top-navigation-by-user-activation allow-forms allow-popups allow-same-origin"  height="400" style="width: 100%;" scrolling="no" title="Some Finishing Touches" src="https://codepen.io/GAmarketing/embed/azbLEjN?default-tab=css%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/GAmarketing/pen/azbLEjN">
+<iframe sandbox="allow-scripts allow-top-navigation allow-top-navigation-by-user-activation allow-forms allow-popups allow-same-origin"  height="400" style="width: 100%;" scrolling="no" title="Some Finishing Touches" src="https://codepen.io/GAmarketing/embed/vEYedNj?default-tab=css%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/GAmarketing/pen/vEYedNj">
   Some Finishing Touches</a> by General Assembly (<a href="https://codepen.io/GAmarketing">@GAmarketing</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
