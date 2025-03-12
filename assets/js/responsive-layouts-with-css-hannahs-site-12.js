@@ -39,22 +39,32 @@ describe('Styling for #introduction', function () {
   });
 });
 
-// --- MutationObserver for CSS Changes ---
-const styleObserver = new MutationObserver(() => {
+// Function to rerun Jasmine tests
+function rerunJasmineTests() {
   if (window.jasmine && jasmine.getEnv) {
-    jasmine.getEnv().execute();
+    console.clear(); // Clears console for cleaner output
+    jasmine.getEnv().execute(); // Rerun all Jasmine tests
   }
+}
+
+// MutationObserver to detect CSS changes
+const styleObserver = new MutationObserver((mutations) => {
+  console.log('CSS changed, rerunning tests...');
+  rerunJasmineTests(); // Rerun Jasmine tests when styles change
 });
 
-// Find the <style> element(s) where CSS is applied in CodePen
-const cssNodes = document.querySelectorAll('style, link[rel="stylesheet"]');
+// Observe all <style> and <link rel="stylesheet"> elements
+const observeStyles = () => {
+  const cssNodes = document.querySelectorAll('style, link[rel="stylesheet"]');
+  cssNodes.forEach((node) => {
+    styleObserver.observe(node, { childList: true, subtree: true });
+  });
+};
 
-// Watch for changes in existing style elements
-cssNodes.forEach((node) => {
-  styleObserver.observe(node, { childList: true, subtree: true });
-});
+// Start observing existing styles
+observeStyles();
 
-// Also, observe the document head for new <style> elements being added dynamically
+// Also observe the <head> for new styles added dynamically
 new MutationObserver((mutations) => {
   mutations.forEach((mutation) => {
     mutation.addedNodes.forEach((node) => {
@@ -67,3 +77,7 @@ new MutationObserver((mutations) => {
     });
   });
 }).observe(document.head, { childList: true });
+
+console.log(
+  'CSS MutationObserver initialized. Tests will rerun when CSS changes.'
+);
