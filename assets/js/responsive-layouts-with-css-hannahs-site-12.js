@@ -39,7 +39,31 @@ describe('Styling for #introduction', function () {
   });
 });
 
+// --- MutationObserver for CSS Changes ---
+const styleObserver = new MutationObserver(() => {
+  if (window.jasmine && jasmine.getEnv) {
+    jasmine.getEnv().execute();
+  }
+});
 
-function loadCssTest() {
-  jasmine.getEnv().execute();
-}
+// Find the <style> element(s) where CSS is applied in CodePen
+const cssNodes = document.querySelectorAll('style, link[rel="stylesheet"]');
+
+// Watch for changes in existing style elements
+cssNodes.forEach((node) => {
+  styleObserver.observe(node, { childList: true, subtree: true });
+});
+
+// Also, observe the document head for new <style> elements being added dynamically
+new MutationObserver((mutations) => {
+  mutations.forEach((mutation) => {
+    mutation.addedNodes.forEach((node) => {
+      if (
+        node.nodeName === 'STYLE' ||
+        (node.nodeName === 'LINK' && node.rel === 'stylesheet')
+      ) {
+        styleObserver.observe(node, { childList: true, subtree: true });
+      }
+    });
+  });
+}).observe(document.head, { childList: true });
