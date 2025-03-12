@@ -40,44 +40,53 @@ describe('Styling for #introduction', function () {
 });
 
 // Function to rerun Jasmine tests
+// Function to rerun Jasmine tests
 function rerunJasmineTests() {
   if (window.jasmine && jasmine.getEnv) {
     console.clear(); // Clears console for cleaner output
+    console.log("Rerunning Jasmine tests due to CSS change...");
     jasmine.getEnv().execute(); // Rerun all Jasmine tests
   }
 }
 
 // MutationObserver to detect CSS changes
-const styleObserver = new MutationObserver((mutations) => {
-  console.log('CSS changed, rerunning tests...');
-  rerunJasmineTests(); // Rerun Jasmine tests when styles change
-});
+let styleObserver;
+let cssChangeTimeout;
 
-// Observe all <style> and <link rel="stylesheet"> elements
-const observeStyles = () => {
-  const cssNodes = document.querySelectorAll('style, link[rel="stylesheet"]');
-  cssNodes.forEach((node) => {
+// Function to start observing styles
+function startObservingStyles() {
+  if (styleObserver) {
+    styleObserver.disconnect(); // Stop any existing observer before starting fresh
+  }
+
+  styleObserver = new MutationObserver((mutations) => {
+    clearTimeout(cssChangeTimeout);
+    cssChangeTimeout = setTimeout(() => {
+      rerunJasmineTests(); // Rerun Jasmine tests when styles change
+    }, 300); // Small delay to batch changes and prevent excessive calls
+  });
+
+  // Find all <style> and <link rel="stylesheet"> elements
+  document.querySelectorAll('style, link[rel="stylesheet"]').forEach((node) => {
     styleObserver.observe(node, { childList: true, subtree: true });
   });
-};
 
-// Start observing existing styles
-observeStyles();
+  console.log("CSS MutationObserver is active.");
+}
 
-// Also observe the <head> for new styles added dynamically
+// Start observing styles
+startObservingStyles();
+
+// Also observe the <head> for new styles being added dynamically
 new MutationObserver((mutations) => {
   mutations.forEach((mutation) => {
     mutation.addedNodes.forEach((node) => {
-      if (
-        node.nodeName === 'STYLE' ||
-        (node.nodeName === 'LINK' && node.rel === 'stylesheet')
-      ) {
-        styleObserver.observe(node, { childList: true, subtree: true });
+      if (node.nodeName === 'STYLE' || (node.nodeName === 'LINK' && node.rel === 'stylesheet')) {
+        console.log("New style element detected, reattaching observer...");
+        startObservingStyles(); // Reattach observer to new styles
       }
     });
   });
 }).observe(document.head, { childList: true });
 
-console.log(
-  'CSS MutationObserver initialized. Tests will rerun when CSS changes.'
-);
+console.log("CSS MutationObserver initialized. Tests will rerun when CSS changes.");
