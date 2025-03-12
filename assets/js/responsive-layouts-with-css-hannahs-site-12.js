@@ -39,8 +39,7 @@ describe('Styling for #introduction', function () {
   });
 });
 
-// Function to rerun Jasmine tests
-// Function to rerun Jasmine tests
+// Function to rerun Jasmine tests 5
 function rerunJasmineTests() {
   if (window.jasmine && jasmine.getEnv) {
     console.clear(); // Clears console for cleaner output
@@ -49,44 +48,35 @@ function rerunJasmineTests() {
   }
 }
 
-// MutationObserver to detect CSS changes
-let styleObserver;
-let cssChangeTimeout;
-
-// Function to start observing styles
-function startObservingStyles() {
-  if (styleObserver) {
-    styleObserver.disconnect(); // Stop any existing observer before starting fresh
-  }
-
-  styleObserver = new MutationObserver((mutations) => {
-    clearTimeout(cssChangeTimeout);
-    cssChangeTimeout = setTimeout(() => {
-      rerunJasmineTests(); // Rerun Jasmine tests when styles change
-    }, 300); // Small delay to batch changes and prevent excessive calls
+// Function to get all computed styles as a unique string (to detect changes)
+function getComputedStylesSnapshot() {
+  let styles = "";
+  document.querySelectorAll("*").forEach((el) => {
+    styles += window.getComputedStyle(el).cssText;
   });
-
-  // Find all <style> and <link rel="stylesheet"> elements
-  document.querySelectorAll('style, link[rel="stylesheet"]').forEach((node) => {
-    styleObserver.observe(node, { childList: true, subtree: true });
-  });
-
-  console.log("CSS MutationObserver is active.");
+  return styles;
 }
 
-// Start observing styles
-startObservingStyles();
+let lastComputedStyles = getComputedStylesSnapshot();
+let cssChangeTimeout;
 
-// Also observe the <head> for new styles being added dynamically
-new MutationObserver((mutations) => {
-  mutations.forEach((mutation) => {
-    mutation.addedNodes.forEach((node) => {
-      if (node.nodeName === 'STYLE' || (node.nodeName === 'LINK' && node.rel === 'stylesheet')) {
-        console.log("New style element detected, reattaching observer...");
-        startObservingStyles(); // Reattach observer to new styles
-      }
-    });
-  });
-}).observe(document.head, { childList: true });
+// Function to monitor for CSS changes
+function startCSSMonitoring() {
+  setInterval(() => {
+    const currentStyles = getComputedStylesSnapshot();
+    if (currentStyles !== lastComputedStyles) {
+      clearTimeout(cssChangeTimeout);
+      cssChangeTimeout = setTimeout(() => {
+        console.log("Detected CSS change, rerunning tests...");
+        rerunJasmineTests();
+        lastComputedStyles = currentStyles;
+      }, 500); // Small delay to allow full typing before rerunning tests
+    }
+  }, 1000); // Check for changes every second
+}
 
-console.log("CSS MutationObserver initialized. Tests will rerun when CSS changes.");
+// Start monitoring CSS changes
+startCSSMonitoring();
+
+console.log("CSS Monitoring initialized. Tests will rerun when CSS changes.");
+
