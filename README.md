@@ -109,6 +109,8 @@ By setting **`max-width: 600px;`**, the paragraph won’t stretch too wide on la
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
 
+<small><strong>TIP:</strong> After updating your code, click the <strong>"Run"</strong> or <strong>"Rerun"</strong> button in CodePen to make sure your changes take effect. Then, check <strong>View Test Results</strong> to see if your updates pass!</small>
+
 ---
 
 <h1 class="slide-header">Centering with the Margin</h1>
@@ -271,6 +273,8 @@ With these changes, Hannah’s image gallery will stay well-organized and adapt 
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
 
+<small><strong>TIP:</strong> After updating your code, click the <strong>"Run"</strong> or <strong>"Rerun"</strong> button in CodePen to make sure your changes take effect. Then, check <strong>View Test Results</strong> to see if your updates pass!</small>
+
 ---
 
 <h1 class="slide-header">Adding Flexbox to the Social Icons</h1>
@@ -289,6 +293,8 @@ Once applied, the social icons will be **evenly spaced and centered**, making th
   Some Finishing Touches</a> by General Assembly (<a href="https://codepen.io/GAmarketing">@GAmarketing</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
+
+<small><strong>TIP:</strong> After updating your code, click the <strong>"Run"</strong> or <strong>"Rerun"</strong> button in CodePen to make sure your changes take effect. Then, check <strong>View Test Results</strong> to see if your updates pass!</small>
 
 ---
 
@@ -433,17 +439,20 @@ Now, **resize the browser** or view the site on a **mobile screen** to see the n
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
 
+<small><strong>TIP:</strong> After updating your code, click the <strong>"Run"</strong> or <strong>"Rerun"</strong> button in CodePen to make sure your changes take effect. Then, check <strong>View Test Results</strong> to see if your updates pass!</small>
+
 ---
 
 <h1 class="slide-header">Hannah’s Site is Complete! 🎉</h1>
 
 Great job! You’ve successfully built a **responsive portfolio site** for Hannah. Now, whether visitors are browsing on a **desktop** or a **mobile device**, the site looks polished, well-structured, and easy to navigate.
 
-**What You’ve Accomplished:**  
-✅ Styled the **navigation bar** to adjust for different screen sizes.  
-✅ Created a **responsive image gallery** that adapts to mobile layouts.  
-✅ Used **Flexbox** to improve spacing and alignment.  
-✅ Applied **media queries** to make the site look great on any device.
+**What You’ve Accomplished:**
+
+- Styled the **navigation bar** to adjust for different screen sizes.
+- Created a **responsive image gallery** that adapts to mobile layouts.
+- Used **Flexbox** to improve spacing and alignment.
+- Applied **media queries** to make the site look great on any device.
 
 <img src="./assets/hannah-final.png" alt="Final Desktop Site" style="width:800px;"/>
 
