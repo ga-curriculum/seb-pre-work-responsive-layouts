@@ -39,44 +39,47 @@ describe('Styling for #introduction', function () {
   });
 });
 
-// Function to rerun Jasmine tests 5
+// Function to rerun Jasmine tests
 function rerunJasmineTests() {
   if (window.jasmine && jasmine.getEnv) {
     console.clear(); // Clears console for cleaner output
-    console.log("Rerunning Jasmine tests due to CSS change...");
+    console.log("Forcing test rerun by modifying the HTML...");
+    
+    // Create or update a hidden element to trigger CodePen’s HTML change detection
+    let testTrigger = document.getElementById("test-force-trigger");
+    if (!testTrigger) {
+      testTrigger = document.createElement("span");
+      testTrigger.id = "test-force-trigger";
+      testTrigger.style.display = "none";
+      document.body.appendChild(testTrigger);
+    } else {
+      testTrigger.textContent = testTrigger.textContent === "1" ? "0" : "1"; // Flip value
+    }
+
     jasmine.getEnv().execute(); // Rerun all Jasmine tests
   }
 }
 
-// Function to get all computed styles as a unique string (to detect changes)
-function getComputedStylesSnapshot() {
-  let styles = "";
-  document.querySelectorAll("*").forEach((el) => {
-    styles += window.getComputedStyle(el).cssText;
-  });
-  return styles;
-}
-
-let lastComputedStyles = getComputedStylesSnapshot();
+// Function to detect CSS changes
+let lastComputedStyles = "";
 let cssChangeTimeout;
 
-// Function to monitor for CSS changes
-function startCSSMonitoring() {
-  setInterval(() => {
-    const currentStyles = getComputedStylesSnapshot();
-    if (currentStyles !== lastComputedStyles) {
-      clearTimeout(cssChangeTimeout);
-      cssChangeTimeout = setTimeout(() => {
-        console.log("Detected CSS change, rerunning tests...");
-        rerunJasmineTests();
-        lastComputedStyles = currentStyles;
-      }, 500); // Small delay to allow full typing before rerunning tests
-    }
-  }, 1000); // Check for changes every second
+function checkForCSSChanges() {
+  let currentStyles = "";
+  document.querySelectorAll("*").forEach((el) => {
+    currentStyles += window.getComputedStyle(el).cssText;
+  });
+
+  if (currentStyles !== lastComputedStyles) {
+    clearTimeout(cssChangeTimeout);
+    cssChangeTimeout = setTimeout(() => {
+      rerunJasmineTests();
+      lastComputedStyles = currentStyles;
+    }, 500); // Small debounce to prevent excessive reruns
+  }
 }
 
-// Start monitoring CSS changes
-startCSSMonitoring();
+// Start checking for CSS changes every second
+setInterval(checkForCSSChanges, 1000);
 
 console.log("CSS Monitoring initialized. Tests will rerun when CSS changes.");
-
